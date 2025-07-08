@@ -7,7 +7,7 @@ function extract_reviews () {
         reviews.push(text);
     });
 
-    // Returning the top 50 reviews 
+    // Returning  50 reviews 
     return reviews.slice(0,50).join('\n');
 
 }
