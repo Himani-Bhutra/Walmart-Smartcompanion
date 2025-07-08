@@ -10,3 +10,18 @@
   font-family: Arial, sans-serif;
   z-index: 9999;
 }
+
+#summary_box-box {
+  background :#fff8dc;
+  padding : 12px;
+  margin-top :20px ;
+  border-color :#ccc;
+  border-spacing: 1px;
+  border: solid;
+  border-radius : 8px;
+  max-width :600px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      
+}
+
+
