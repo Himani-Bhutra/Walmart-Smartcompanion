@@ -1,0 +1,26 @@
+function extract_reviews () {
+    // Adding the class and Id of the individual review div block
+    const reviewDivs = document.querySelectorAll('#item-review-section .flex.flex-column.items-start.self-stretch.f6');
+    let reviews = [];
+    reviewDivs.forEach(div => {
+        const text = div.innerText.trim();
+        if (text.length > 30) {
+            reviews.push(text);
+        }
+    });
+
+    // Returning the top 10 reviews 
+    return reviews.slice(0,10).join('\n');
+
+}
+
+function summarizeReviews(reviewText, callback) {
+  fetch("http://localhost:5000/summarize", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ text: reviewText })
+  })
+  .then(response => response.json())
+  .then(data => callback(null, data.Summary))
+  .catch(err => callback(err, null));
+}

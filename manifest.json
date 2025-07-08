@@ -1,0 +1,13 @@
+{
+    "manifest_version" : 3,
+    "name" : "Walmart Companion",
+    "version" : "1.0",
+    "description" : "A walmart extention to enchance the user experience !",
+    "content_scripts" :[
+        {
+        "js" : ["review_summarize.js","content.js"],
+        "css" : ["style.css"],
+        "matches" : ["https://www.walmart.com/*"]
+        }
+    ],
+    "permissions" : []}
