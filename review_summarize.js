@@ -4,13 +4,11 @@ function extract_reviews () {
     let reviews = [];
     reviewDivs.forEach(div => {
         const text = div.innerText.trim();
-        if (text.length > 30) {
-            reviews.push(text);
-        }
+        reviews.push(text);
     });
 
     // Returning the top 10 reviews 
-    return reviews.slice(0,10).join('\n');
+    return reviews.slice(0,50).join('\n');
 
 }
 
