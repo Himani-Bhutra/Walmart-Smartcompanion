@@ -18,7 +18,7 @@ window.addEventListener("load", function () {
         return;
       }
       const summaryBox = document.createElement("div");
-      summaryBox.id = "summary_box"
+      summaryBox.id = "summary_box-box"
       summaryBox.innerHTML = `<b>📝 Review Summary:</b><br>${summary}`;
       const reviewSection = document.querySelector("#item-review-section");
       if (reviewSection) {
