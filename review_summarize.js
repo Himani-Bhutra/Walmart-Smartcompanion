@@ -27,3 +27,14 @@ function summarizeReviews(reviewText, callback) {
   .then(data => callback(null, data.Summary))
   .catch(err => callback(err, null));
 }
+
+
+function extract_reviews_from_html(doc) {
+  const reviewDivs = doc.querySelectorAll('[data-automation-id="review-text"]');
+  let reviews = [];
+  reviewDivs.forEach(div => {
+    reviews.push(div.innerText.trim());
+  });
+  return reviews.slice(0, 500).join("\n");
+}
+
