@@ -10,4 +10,10 @@
         "matches" : ["https://www.walmart.com/*"]
         }
     ],
-    "permissions" : []}
+    "permissions" : ["https://www.walmart.com/*"],
+
+    "host_permission" : ["https://www.walmart.com/*"],
+
+    "background": {
+    "service_worker": "background.js"}
+}

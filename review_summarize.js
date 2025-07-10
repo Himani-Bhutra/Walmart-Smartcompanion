@@ -1,3 +1,8 @@
+function getProductId() {
+    const match = window.location.pathname.match(/\/ip\/[^\/]+\/(\d+)/);
+    return match ? match[1] : null;
+}
+
 function extract_reviews () {
     // Adding the class and Id of the individual review div block
     const reviewDivs = document.querySelectorAll('#item-review-section .flex.flex-column.items-start.self-stretch.f6');
@@ -7,8 +12,8 @@ function extract_reviews () {
         reviews.push(text);
     });
 
-    // Returning  50 reviews 
-    return reviews.slice(0,50).join('\n');
+    // Returning  500 reviews 
+    return reviews.slice(0,500).join('\n');
 
 }
 
