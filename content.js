@@ -11,14 +11,14 @@ window.addEventListener("load", function () {
   }, 3000);
 
 
-//Review summary box 
+  //Review summary box 
 
-const product_id = getProductId();
-if(!product_id) return ;
+  const product_id = getProductId();
+  if(!product_id) return ;
 
-const review_page_url = `https://www.walmart.com/reviews/product/${product_id}?entryPoint=viewAllReviewsTop`;
+  const review_page_url = `https://www.walmart.com/reviews/product/${product_id}?entryPoint=viewAllReviewsTop`;
 
-setTimeout(() => {
+  setTimeout(() => {
     chrome.runtime.sendMessage({ type: "FETCH_REVIEWS_PAGE", url: review_page_url }, (response) => {
       if (response && response.html) {
         const parser = new DOMParser();
@@ -42,7 +42,8 @@ setTimeout(() => {
           }
         });
       }
-    })}, 10000);
+    }
+  )}, 10000);
 
 });
 

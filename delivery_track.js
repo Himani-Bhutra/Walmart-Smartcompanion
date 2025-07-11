@@ -2,21 +2,8 @@ let on_time = ['fast delivery','on time', 'early'];
 let not_onTime = ['delayed', 'late'];
 let stock = ['out of stock', 'not available','sold out','restock'];
 
-function extract_r () {
-    // Adding the class and Id of the individual review div block
-    const reviewDivs = document.querySelectorAll('#item-review-section .flex.flex-column.items-start.self-stretch.f6');
-    let reviews = [];
-    reviewDivs.forEach(div => {
-        const text = div.innerText.trim();
-        reviews.push(text);
-    });
 
-    // Returning  500 reviews 
-    return reviews.slice(0,500).join('\n');
-
-}
-
-const reviews = extract_r();
+const reviews = extract_reviews_from_html();
 
 if (reviews.length > 0){
     window.addEventListener("load", function () {

@@ -10,7 +10,7 @@
         "matches" : ["https://www.walmart.com/*"]
         }
     ],
-    "permissions" : ["https://www.walmart.com/*"],
+    "permissions": ["scripting", "activeTab"],
 
     "host_permission" : ["https://www.walmart.com/*"],
 
