@@ -1,18 +1,12 @@
 window.addEventListener("load", function () {
-  const box = document.createElement("div");
-  box.innerText = "✅ Walmart SmartCompanion is active!";
-  box.id = "smartbuddy-box";
-  document.body.appendChild(box);
-  setTimeout(() => box.remove(), 3000);
-
-  /*setTimeout(() => {
+  setTimeout(() => {
     const review = extractReviews(); 
     if (!review) {
       console.warn("No reviews found on this page.");
       return;
     }
 
-    console.log("Extracted Reviews:", review);
+    //console.log("Extracted Reviews:", review);
 
     summarizeReviews(review, function(err, summary) {
       if (err) {
@@ -31,5 +25,5 @@ window.addEventListener("load", function () {
         document.body.appendChild(summaryBox);
       }
     });
-  }, 10000); // waiting 10s for page load*/
+  }, 7000); // waiting 10s for page load
 });
