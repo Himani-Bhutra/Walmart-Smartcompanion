@@ -1,29 +1,28 @@
 from flask import Flask, request, jsonify
-from sumy.summarizers.lex_rank import LexRankSummarizer
+from flask_cors import CORS 
+from sumy.summarizers.luhn import LuhnSummarizer 
 from sumy.parsers.plaintext import PlaintextParser
 from sumy.nlp.tokenizers import Tokenizer
-from flask_cors import CORS
 import nltk
-nltk.download('punkt_tab')
+nltk.download('punkt')
 
 app = Flask(__name__)
-CORS(app)
-@app.route("/summarize", methods=["POST"])
+CORS(app) 
 
+@app.route("/summarize", methods=["POST"])
 def summary():
     data = request.get_json()
-    text = data.get("text","")
+    text = data.get("text", "")
     
-    if not text or len(text.split()) < 30 :
-        return jsonify({"Summary":"Not enough reviews available to summarize!"})
+    if not text or len(text.split()) < 30:
+        return jsonify({"summary": text})
+
     parser = PlaintextParser.from_string(text, Tokenizer("english"))
-
-    summarizer = LexRankSummarizer()
-
+    summarizer = LuhnSummarizer()
     summarised_review = summarizer(parser.document, 7)
-    summary = " ".join(str(sentence) for sentence in summarised_review )
+    summary = " ".join(str(sentence) for sentence in summarised_review)
 
-    return jsonify({"Summary":summary})
+    return jsonify({"summary": summary})
 
 if __name__ == "__main__":
-    app.run(port = 5000)
+    app.run(port=5000)

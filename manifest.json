@@ -1,19 +1,16 @@
 {
-    "manifest_version" : 3,
-    "name" : "Walmart Companion",
-    "version" : "1.0",
-    "description" : "A walmart extention to enchance the user experience !",
-    "content_scripts" :[
-        {
-        "js" : ["review_summarize.js","content.js", "delivery_track.js"],
-        "css" : ["style.css"],
-        "matches" : ["https://www.walmart.com/*"]
-        }
-    ],
-    "permissions": ["scripting", "activeTab"],
+  "manifest_version": 3,
+  "name": "Walmart SmartBuddy",
+  "version": "1.0",
+  "description": "Smart companion for Walmart shopping!- For Walmart Sparkathon!!",
+  "content_scripts": [
+    {
+      "matches": ["https://www.walmart.com/*"],
+      "js": ["review_summary.js","content.js"],
+      "css": ["style.css"]
+    }
+  ],
+  "permissions": [],
+  "host_permissions": ["http://localhost:5000/"]
 
-    "host_permission" : ["https://www.walmart.com/*"],
-
-    "background": {
-    "service_worker": "background.js"}
 }
