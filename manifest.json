@@ -6,7 +6,7 @@
   "content_scripts": [
     {
       "matches": ["https://www.walmart.com/*"],
-      "js": ["review_summary.js","summary.js","stock_update.js","content.js"],
+      "js": ["chart.js","review_summary.js","summary.js","stock_update.js","content.js", "price_history.js"],
       "css": ["style.css"]
     }
   ],
